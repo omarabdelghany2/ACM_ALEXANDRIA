@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1659229589 source:c:\users\pc\documents\acm_alexandria\amusing_joke\main.cpp
+	<iostream>
+	"algorithm"
+
