@@ -4,31 +4,50 @@ using namespace std;
 
 int main()
 {
-    int arr_size=0;
-    int quiery_no=0;
+    int arr_size;
+    int quiery_no;
     cin>>arr_size>>quiery_no;
-    int arr[arr_size]={0};
+    int arr[arr_size];
+
+
     for(int i=0;i<arr_size;i++)
     {
         cin>>arr[i];
     }
+
     int counter[arr_size]={0};
     int start=0;
     int End=0;
-    for(int i=0;i<quiery_no;i++)
+
+   for(int i=0;i<quiery_no;i++)
     {
         cin>>start>>End;
-        for(int j=start-1;j<End;j++)
-        {
-            counter[j]++;
-        }
+        counter[start-1]++;
+        counter[End]--;
+    }
+
+    for(int i=0;i<arr_size;i++)
+    {
+        if(i!=0)
+            counter[i]+=counter[i-1];
 
     }
-    sort(arr,arr+arr_size);
+
     sort(counter,counter+arr_size);
+    sort(arr,arr+arr_size);
+
+for(int i=0;i<arr_size;i++)
+    {
+        cout<<arr[i]<<" ";
+
+    }
+ cout<<endl;
 
 
-    int sum=0;
+
+
+
+    long sum=0;
     for(int i=0;i<arr_size;i++)
     {
         sum+=arr[i]*counter[i];
