@@ -1,25 +1,28 @@
 #include <iostream>
 #include"algorithm"
+#include"vector"
 using namespace std;
 
 int main()
 {
-    int arr_size;
-    int quiery_no;
+    long long arr_size;
+    long long quiery_no;
     cin>>arr_size>>quiery_no;
-    int arr[arr_size];
+    vector<long long> arr;
 
 
     for(int i=0;i<arr_size;i++)
     {
-        cin>>arr[i];
+        long long n;
+        cin>>n;
+        arr.push_back(n);
     }
 
-    int counter[arr_size]={0};
+    long long counter[arr_size]={0};
     int start=0;
     int End=0;
 
-   for(int i=0;i<quiery_no;i++)
+    for(int i=0;i<quiery_no;i++)
     {
         cin>>start>>End;
         counter[start-1]++;
@@ -30,27 +33,17 @@ int main()
     {
         if(i!=0)
             counter[i]+=counter[i-1];
-
     }
 
     sort(counter,counter+arr_size);
-    sort(arr,arr+arr_size);
-
-for(int i=0;i<arr_size;i++)
-    {
-        cout<<arr[i]<<" ";
-
-    }
- cout<<endl;
+    sort(arr.begin(), arr.end());
 
 
 
-
-
-    long sum=0;
-    for(int i=0;i<arr_size;i++)
-    {
-        sum+=arr[i]*counter[i];
+    long long sum=0;
+    int i=0;
+    for(long long num : arr){
+        sum += num * counter[i++];
     }
     cout<<sum;
     return 0;
