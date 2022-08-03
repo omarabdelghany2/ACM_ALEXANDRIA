@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1659485375 source:c:\users\pc\documents\acm_alexandria\queries about less or equal elements\main.cpp
+	<iostream>
+	"algorithm"
+

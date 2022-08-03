@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1659488334 source:c:\users\pc\documents\acm_alexandria\ kefa and company\main.cpp
+	<iostream>
+	"algorithm"
+
